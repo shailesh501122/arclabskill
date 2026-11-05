@@ -1,0 +1,15 @@
+{
+  "series": "Arc Lab",
+  "episode": 1,
+  "title": "Why the sky is blue",
+  "subtitle": "Physics in 30 seconds",
+  "hook": "Ever wondered this?",
+  "handle": "@arclab",
+  "scenes": [
+    { "kicker": "The setup", "text": "Sunlight looks white, but it is every color mixed together." },
+    { "kicker": "The trick", "text": "Air molecules scatter short blue waves far more than long red ones." },
+    { "kicker": "The result", "text": "That scattered blue light reaches your eyes from every direction of the sky." },
+    { "kicker": "Bonus", "text": "At sunset light travels through more air, so the blue is scattered away and reds win." }
+  ],
+  "outro": { "text": "Follow Arc Lab for Episode 02: why the ocean is blue" }
+}
