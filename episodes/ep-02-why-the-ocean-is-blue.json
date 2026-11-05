@@ -1,0 +1,16 @@
+{
+  "series": "Arc Lab",
+  "episode": 2,
+  "title": "Why the ocean is blue",
+  "subtitle": "Spoiler: it's not the sky",
+  "hook": "Most people get this wrong.",
+  "handle": "@arclab",
+  "scenes": [
+    { "kicker": "The myth", "text": "Most people think the ocean is blue because it reflects the sky." },
+    { "kicker": "The truth", "text": "Water itself is blue. It absorbs red light and lets blue light through." },
+    { "kicker": "Go deeper", "text": "Red fades first, a few meters down. Below that, everything looks blue." },
+    { "kicker": "The proof", "text": "A glass of water looks clear, because you need many meters for the tint to show." },
+    { "kicker": "Bonus", "text": "Green water near coasts comes from algae and sediment, not the water." }
+  ],
+  "outro": { "text": "Follow Arc Lab for Episode 03: why leaves change color" }
+}
