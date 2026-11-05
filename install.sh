@@ -42,8 +42,8 @@ chmod +x "$DEST_ROOT/$SKILL/scripts/render_short.py"
 echo "Installed $SKILL -> $DEST_ROOT/$SKILL"
 
 # dependencies
-if ! python3 -c "import PIL" 2>/dev/null; then
-  echo "Installing Pillow ..."
+if ! python3 -c "import PIL, numpy" 2>/dev/null; then
+  echo "Installing Pillow and numpy ..."
   python3 -m pip install --user -q -r "$DEST_ROOT/$SKILL/scripts/requirements.txt" \
     || echo "Could not install Pillow automatically; run: pip install Pillow"
 fi

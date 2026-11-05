@@ -1,6 +1,6 @@
 ---
 name: arc-lab-series
-description: Generate "Arc Lab" series short-form vertical videos (9:16, 1080x1920, YouTube Shorts / Reels / TikTok). Use when the user asks to make, script, or render an Arc Lab episode, a short explainer video, or a vertical video with bold captions from a topic, outline, or script. Writes a storyboard JSON, then renders an MP4 locally with Pillow + ffmpeg, plus an .srt caption file and a cover image. No API keys needed.
+description: Generate "Arc Lab" series short-form vertical videos, either captioned explainers or code-drawn animated "Training Arc" character episodes (9:16, 1080x1920, YouTube Shorts / Reels / TikTok). Use when the user asks to make, script, or render an Arc Lab episode, a short explainer video, or a vertical video with bold captions from a topic, outline, or script. Writes a storyboard JSON, then renders an MP4 locally with Pillow + ffmpeg, plus an .srt caption file and a cover image. No API keys needed.
 ---
 
 # Arc Lab series — short-form video generator
@@ -49,6 +49,22 @@ Optional local text-to-speech narration and background music.
    ffmpeg -v error -ss 4 -i out.mp4 -frames:v 1 -vf scale=540:-1 frame.png
    ```
    Report the paths of the `.mp4`, the `.srt` captions and the `_cover.png` thumbnail.
+
+## Animated mode: code-drawn "Training Arc" character shorts
+
+For an animated character episode (an original rookie hero, drawn entirely in code,
+with synthesized music and sound effects), use `scripts/animate_arc.py` instead:
+
+```bash
+python3 "$SKILL_DIR/scripts/animate_arc.py" -o arc-lab/training-arc-part1.mp4
+python3 "$SKILL_DIR/scripts/animate_arc.py" --still 15 -o check.png       # one frame, for checking
+python3 "$SKILL_DIR/scripts/animate_arc.py" --config part2.json -o p2.mp4  # override texts/colors
+```
+It needs numpy as well as Pillow and ffmpeg. The 28 s story: Day 1 hook, failed
+push-up, training montage (days 2 to 30), 50 push-ups, power-up and LEVEL UP, then a
+hero pose with a "Follow for Part 2" call to action. The config JSON overrides `part`,
+`name`, `handle`, any line under `lines`, and colors under `colors` (see `DEFAULTS`
+in the script). Rendering takes about 2 minutes.
 
 ## Notes
 - Without `--voice`, per-scene `audio` or `--music`, the video has a silent audio track

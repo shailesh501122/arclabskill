@@ -16,8 +16,16 @@ Each video contains:
 - optional local text-to-speech narration (`espeak-ng` / `espeak` / macOS `say`) and a music bed
 - an `.srt` caption file and a `_cover.png` thumbnail alongside the MP4
 
+## Animated "Training Arc" episodes
+`scripts/animate_arc.py` makes a fully code-drawn animated short. An original character
+(Kai) fails a push-up, trains through a montage, powers up, levels up and teases Part 2.
+Every frame is drawn with Pillow and all the music and sound effects are synthesized with numpy.
+```bash
+python3 ~/.claude/skills/arc-lab-series/scripts/animate_arc.py -o training-arc-part1.mp4
+```
+
 ## Requirements
-- Python 3.9+ with Pillow (`pip install Pillow`)
+- Python 3.9+ with Pillow and numpy (`pip install Pillow numpy`)
 - ffmpeg (`apt install ffmpeg`, `brew install ffmpeg`, or `winget install ffmpeg`)
 - Optional: `espeak-ng` for narration (`apt install espeak-ng`)
 
