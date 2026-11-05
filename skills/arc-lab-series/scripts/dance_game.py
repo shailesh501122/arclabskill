@@ -199,12 +199,19 @@ class Cv:
                        width=int(width * SS) if outline else 0)
 
     def ellipse(self, box, fill=None, outline=None, width=0):
+        if box[2] - box[0] < 1 or box[3] - box[1] < 1:
+            return
         self.d.ellipse(tuple(v * SS for v in box), fill=fill, outline=outline, width=int(width * SS))
 
     def line(self, pts, fill, width):
         self.d.line([(x * SS, y * SS) for x, y in pts], fill=fill, width=int(width * SS), joint="curve")
 
     def rect(self, box, fill, radius=0, outline=None, width=0):
+        x0, y0, x1, y1 = box
+        box = (min(x0, x1), min(y0, y1), max(x0, x1), max(y0, y1))
+        if box[2] - box[0] < 1 or box[3] - box[1] < 1:
+            return
+        radius = min(radius, (box[2] - box[0]) / 2, (box[3] - box[1]) / 2)
         self.d.rounded_rectangle(tuple(v * SS for v in box), radius=radius * SS, fill=fill,
                                  outline=outline, width=int(width * SS))
 
@@ -881,8 +888,8 @@ def synth_song(path, voice_clips=None, voice_events=None):
     # ---- intro (0-6): pad + riser, countdown hits
     for b in range(3):
         root, notes = CHORDS[b % 4]
-        mix.add("pad", pad_chord(notes, BAR) * 1.2, b * BAR)
-    riser(0, INTRO_END, mix, 0.18)
+        mix.add("pad", pad_chord(notes, BAR) * 3.0, b * BAR)
+    riser(0, INTRO_END, mix, 0.35)
     for i in range(4):
         t0 = INTRO_END + i
         mix.add("drums", kick() * (1.0 if i < 3 else 1.3), t0)
@@ -932,7 +939,20 @@ def synth_song(path, voice_clips=None, voice_events=None):
     mix.add("drums", kick() * 1.3, OUTRO)
     for m in (48, 60, 64, 67, 72, 76):
         n = int(8 * SR)
-        mix.add("pad", osc(mtof(m), 8, "saw", detune=0.01) * env(n, 0.02, 3.0) * 0.03, OUTRO)
+        mix.add("pad", osc(mtof(m), 8, "saw", detune=0.01) * env(n, 0.02, 3.0) * 0.07, OUTRO)
+    for bar in range(4):  # celebration groove under the results screen
+        t0 = OUTRO + 2 + bar * BAR
+        root, notes = CHORDS[bar % 4]
+        for beat in range(4):
+            tb = t0 + beat * BEAT
+            if tb > TOTAL - 0.8:
+                break
+            mix.add("drums", kick() * 0.8, tb)
+            mix.add("drums", hat(True), tb + BEAT / 2)
+            if beat in (1, 3):
+                mix.add("drums", clap(), tb)
+            mix.add("bass", bass_note(root, BEAT * 0.9), tb)
+        mix.add("pad", pad_chord(notes, BAR), t0)
     for k, m in enumerate((72, 76, 79, 84, 88, 91)):
         mix.add("fx", lead_note(m, 0.3), OUTRO + 0.15 + k * 0.09)
 
