@@ -1,0 +1,273 @@
+{
+ "title": "What if the Moon vanished tonight? (v2, STRONG hook)",
+ "narration_voice": "ElevenLabs: Clancy - Viral Long-Form Storyteller",
+ "total": 68.0,
+ "vanish": 3.9,
+ "segments": [
+  {
+   "scene": "hook",
+   "counter": [
+    "0",
+    "SECONDS"
+   ],
+   "status": "MOON: GONE",
+   "parts": [
+    [
+     0.0,
+     1.91,
+     "You've looked at the Moon your whole life."
+    ],
+    [
+     2.98,
+     4.34,
+     "But if it vanished tonight,"
+    ],
+    [
+     4.79,
+     6.48,
+     "what would you lose in 24 hours?"
+    ],
+    [
+     7.52,
+     8.11,
+     "Here's the clock."
+    ],
+    [
+     8.54,
+     9.58,
+     "Watch what breaks first."
+    ]
+   ],
+   "keys": [
+    "Moon",
+    "vanished",
+    "24",
+    "hours?",
+    "clock.",
+    "breaks"
+   ]
+  },
+  {
+   "scene": "empty",
+   "counter": [
+    "1",
+    "SECOND"
+   ],
+   "status": "SKY: EMPTIER",
+   "parts": [
+    [
+     10.67,
+     11.55,
+     "One second later..."
+    ],
+    [
+     12.19,
+     12.56,
+     "nothing."
+    ],
+    [
+     13.03,
+     14.7,
+     "The sky just looks a little emptier."
+    ]
+   ],
+   "keys": [
+    "nothing.",
+    "emptier."
+   ]
+  },
+  {
+   "scene": "tides",
+   "counter": [
+    "1",
+    "DAY"
+   ],
+   "status": "TIDES: ~1/3 SIZE",
+   "parts": [
+    [
+     15.76,
+     17.86,
+     "But within a day, the oceans notice."
+    ],
+    [
+     18.31,
+     20.37,
+     "The Moon does most of the pulling on our tides."
+    ],
+    [
+     20.79,
+     24.33,
+     "Without it, only the Sun is left, and tides shrink to about a third."
+    ],
+    [
+     24.78,
+     25.93,
+     "That's the first thing you'd lose."
+    ]
+   ],
+   "keys": [
+    "oceans",
+    "tides.",
+    "Sun",
+    "third.",
+    "first"
+   ]
+  },
+  {
+   "scene": "dark",
+   "counter": [
+    "1",
+    "WEEK"
+   ],
+   "status": "NIGHTS: PITCH BLACK",
+   "parts": [
+    [
+     26.91,
+     29.43,
+     "After a week, nights turn pitch black."
+    ],
+    [
+     29.92,
+     32.56,
+     "No moonlight means more stars than you've ever seen."
+    ]
+   ],
+   "keys": [
+    "pitch",
+    "black.",
+    "stars"
+   ]
+  },
+  {
+   "scene": "animals",
+   "counter": [
+    "1",
+    "MONTH"
+   ],
+   "status": "WILDLIFE: CONFUSED",
+   "parts": [
+    [
+     33.63,
+     35.19,
+     "Then animals get confused."
+    ],
+    [
+     35.66,
+     39.74,
+     "Baby sea turtles, corals and night hunters all time their lives by the Moon."
+    ]
+   ],
+   "keys": [
+    "confused.",
+    "turtles,",
+    "corals",
+    "Moon."
+   ]
+  },
+  {
+   "scene": "wobble",
+   "counter": [
+    "1M",
+    "YEARS"
+   ],
+   "status": "TILT: WOBBLING",
+   "parts": [
+    [
+     40.64,
+     42.04,
+     "And here's the scary part."
+    ],
+    [
+     42.56,
+     47.79,
+     "Right now, Earth's tilt stays close to 23.4 degrees, because the Moon holds it steady."
+    ],
+    [
+     48.32,
+     52.2,
+     "Without it, over millions of years, that tilt could wobble wildly."
+    ]
+   ],
+   "keys": [
+    "scary",
+    "23.4",
+    "steady.",
+    "millions",
+    "wobble"
+   ]
+  },
+  {
+   "scene": "seasons",
+   "counter": [
+    "10M",
+    "YEARS"
+   ],
+   "status": "SEASONS: EXTREME",
+   "parts": [
+    [
+     53.03,
+     54.54,
+     "That means brutal winters..."
+    ],
+    [
+     54.89,
+     56.3,
+     "and scorching summers."
+    ]
+   ],
+   "keys": [
+    "brutal",
+    "winters...",
+    "scorching",
+    "summers."
+   ]
+  },
+  {
+   "scene": "stabilizer",
+   "counter": null,
+   "status": null,
+   "parts": [
+    [
+     57.06,
+     59.12,
+     "So the Moon isn't just a light in the sky."
+    ],
+    [
+     59.47,
+     60.86,
+     "It's Earth's stabilizer."
+    ]
+   ],
+   "keys": [
+    "light",
+    "stabilizer."
+   ]
+  },
+  {
+   "scene": "cta",
+   "counter": null,
+   "status": null,
+   "parts": [
+    [
+     61.78,
+     62.4,
+     "Would you miss it?"
+    ],
+    [
+     62.71,
+     64.08,
+     "Comment yes or no!"
+    ]
+   ],
+   "keys": [
+    "miss",
+    "yes",
+    "no!"
+   ]
+  }
+ ],
+ "brand": [
+  "CURIOUS KAI",
+  "WHAT IF?"
+ ]
+}

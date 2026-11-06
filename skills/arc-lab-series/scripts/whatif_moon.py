@@ -76,6 +76,19 @@ SEGMENTS = [
 ]
 TOTAL = 54.0
 VANISH_T = 2.0
+BRAND = ("ARC LAB", "WHAT IF?")
+
+# Optional: a different narration take with its own timings, as JSON
+# {"total": 72, "vanish": 3.1, "segments": [{"scene", "counter": [num, unit] | null, "status",
+#   "parts": [[a, b, "text"], ...], "keys": [...]}]}. Point WHATIF_EPISODE at the file.
+if os.environ.get("WHATIF_EPISODE"):
+    import json as _json
+    _ep = _json.loads(Path(os.environ["WHATIF_EPISODE"]).read_text())
+    TOTAL, VANISH_T = float(_ep["total"]), float(_ep["vanish"])
+    BRAND = tuple(_ep.get("brand", BRAND))
+    SEGMENTS = [dict(scene=x["scene"], counter=tuple(x["counter"]) if x.get("counter") else None,
+                     status=x.get("status"), parts=[tuple(q) for q in x["parts"]], keys=set(x.get("keys", [])))
+                for x in _ep["segments"]]
 
 # scene start times: each scene begins a little before its narration
 for i, s in enumerate(SEGMENTS):
@@ -499,10 +512,12 @@ def cta(cv, t):
 
 
 def brand(cv):
-    cv.d.arc(((W - 300) * SS, 80 * SS, (W - 246) * SS, 134 * SS), start=200, end=520,
+    name = BRAND[0]
+    x0 = W - 70 - max(tlen(cv, name, 36), tlen(cv, BRAND[1], 26))
+    cv.d.arc(((x0 - 68) * SS, 80 * SS, (x0 - 14) * SS, 134 * SS), start=200, end=520,
              fill=(0, 200, 255), width=int(9 * SS))
-    text(cv, (W - 232, 108), "ARC LAB", 36, anchor="lm", stroke=5)
-    text(cv, (W - 232, 146), "WHAT IF?", 26, fill=(255, 214, 64), anchor="lm", stroke=4)
+    text(cv, (x0, 108), name, 36, anchor="lm", stroke=5)
+    text(cv, (x0, 146), BRAND[1], 26, fill=(255, 214, 64), anchor="lm", stroke=4)
 
 
 def tide_gauge(cv, t, dt):
